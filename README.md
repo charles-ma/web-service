@@ -23,6 +23,7 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 3. won't compile if declared var not used
 4. declare var: var v type / assign var v = value / declare and assign v := value
 5. var will be initiated to zero value if not assigned any. zero value meaning 0, false, ""
+6. v := value can only be used within functions
 
 ### Package
 1. won't compile if imported package not used
