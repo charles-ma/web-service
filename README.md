@@ -20,4 +20,15 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 ### Variable and Declaration
 1. := can infer type to var. declare and assign value. can be used as long as one var is new
 2. vars cannot be declared multiple times
-3. 
+3. won't compile if declared var not used
+4. declare var: var v type / assign var v = value / declare and assign v := value
+5. var will be initiated to zero value if not assigned any. zero value meaning 0, false, ""
+
+### Package
+1. won't compile if imported package not used
+
+### Test
+1. run "go test"
+2. test cases are searched by file name --- xxx_test.go
+3. test methods are searched by name --- TestX[Xx]
+
