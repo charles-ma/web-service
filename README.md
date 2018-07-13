@@ -32,3 +32,6 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 2. test cases are searched by file name --- xxx_test.go
 3. test methods are searched by name --- TestX[Xx]
 
+## Books
+[The little Go book](https://www.openmymind.net/assets/go/go.pdf)
+
