@@ -1,12 +1,15 @@
 package main
 
 import (
-	"./mymath"
+	// "./mymath"
+	"fmt"
+	"os"
 )
 
 func main() {
-	//fmt.Println("Hello World!")
-	//fmt.Println(math.rand.Intn(10))
-	//fmt.Printf("now you have %g problems\n", math.Sqrt(7))
-	mymath.PrintNum(1)
+	if len(os.Args) != 2 {
+		os.Exit(1)
+	}
+
+	fmt.Println("It's over: " + os.Args[1])
 }
