@@ -36,6 +36,7 @@ func TestVar(t *testing.T) {
 }
 
 // Struct
+// Simple Struct
 type MyClass struct {
 	id   int
 	Name string
@@ -48,10 +49,52 @@ func (instance *MyClass) myPrintOnStruct() {
 func TestStruct(t *testing.T) {
 	countTopic()
 
-	myInstance := &MyClass{
-		id:   5,
-		Name: "Mike",
-	}
+	myInstance := &MyClass{5, "Mike"}
 
 	myInstance.myPrintOnStruct()
+}
+
+// More complicated struct
+type Saiyan struct {
+	*Person // this field is implicitly declared
+	Father  *Saiyan
+}
+
+type Person struct {
+	Name  string
+	Power int
+}
+
+func TestComplicatedStruct(t *testing.T) {
+	countTopic()
+
+	mySaiyan := &Saiyan{&Person{"kakasi", 100}, &Saiyan{&Person{"K Father", 80}, nil}}
+
+	if mySaiyan.Father != nil {
+		fmt.Println(mySaiyan.Name)
+	}
+}
+
+// Array
+func TestArray(t *testing.T) {
+	countTopic()
+
+	a := [5]int{0, 1, 2, 3, 4}
+	for index, value := range a {
+		fmt.Print(a[index])
+		fmt.Print(value)
+	}
+	fmt.Println()
+
+	// new to allocate space to array
+	b := new([6]int)
+	b[0] = 1
+	fmt.Println(*b)
+
+	// slice example
+	// c & d share the same backing array, but are different slices
+	c := make([]int, 0, 10)
+	d := append(c, 5)
+	fmt.Println(d)
+	fmt.Println(c)
 }

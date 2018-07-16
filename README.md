@@ -28,11 +28,21 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 ### Package
 1. won't compile if imported package not used
 
+### Struct
+1. No class, only struct
+2. No constructors, only customized factory methods
+3. new(X) is equal to &X{}, will only allocate memory for the new variable
+4. class method are implemented using method receivers
+
+### Array & slice
+1. Array length is fixed!!!
+2. Use slice more
+
 ### Test
 1. run "go test"
 2. test cases are searched by file name --- xxx_test.go
 3. test methods are searched by name --- TestX[Xx]
 
 ## Books
-[The little Go book](https://www.openmymind.net/assets/go/go.pdf)
+[The little Go book](https://www.openmymind.net/assets/go/go.pdf) *Free*
 
