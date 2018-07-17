@@ -126,3 +126,26 @@ func TestMap(t *testing.T) {
 	p, e := m["kakasi"]
 	fmt.Println(p, e)
 }
+
+// Interface
+func TestInterface(t *testing.T) {
+	countTopic()
+
+	v := MyInterImplementation{}
+	myInterfaceTest(v)
+}
+
+func myInterfaceTest(inter MyInterface) {
+	inter.MyFunction("this is a message")
+}
+
+type MyInterImplementation struct {
+}
+
+func (imp MyInterImplementation) MyFunction(message string) {
+	fmt.Println(message)
+}
+
+type MyInterface interface {
+	MyFunction(message string)
+}
