@@ -21,6 +21,7 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 2. Go gets rid of () around conditions. Also gets rid of ; as line breaker
 3. null is nil
 4. if statement can have var assignment
+5. type conversion: a.(int), to get type a.(type), but only applied to empty interface type. a.(type) can only be used within a type switch statement
 
 ### Variable and Declaration
 1. := can infer type to var. declare and assign value. can be used as long as one var is new
@@ -56,10 +57,18 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 
 ### Interface
 1. just a contract
+2. everything implements the empty interface
 
 ### Exception
 1. Go does have panic(throw) and recover(catch) clauses, but are rarely used. Normally should throw an exception using multiple return values
 2. Defer clause is like finally, will defer operation to when enclosing function returns(can have multiple return points)
+
+### Function type
+1. type Add func(a int, b int) int
+
+### Concurrency
+1. go routine is invoked using go myFunction()
+2. go routine will start go thread, having m:n mapping with os threads
 
 ## Books
 [The little Go book](https://www.openmymind.net/assets/go/go.pdf) *Free*

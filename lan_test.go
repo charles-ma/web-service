@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"sync"
 	"testing"
+	"time"
 )
 
 var topicCount int
@@ -133,6 +135,11 @@ func TestInterface(t *testing.T) {
 
 	v := MyInterImplementation{}
 	myInterfaceTest(v)
+
+	var value interface{}
+	if value != nil {
+		fmt.Println(value.(int))
+	}
 }
 
 func myInterfaceTest(inter MyInterface) {
@@ -148,4 +155,52 @@ func (imp MyInterImplementation) MyFunction(message string) {
 
 type MyInterface interface {
 	MyFunction(message string)
+}
+
+// Concurrency/go routine
+func TestConcurrency(t *testing.T) {
+	countTopic()
+
+	for i := 0; i < 10; i++ {
+		go inc()
+	}
+	time.Sleep(time.Millisecond * 10)
+}
+
+var count int
+var lock sync.Mutex
+
+func inc() {
+	lock.Lock()
+	defer lock.Unlock()
+	count++
+	fmt.Println(count)
+}
+
+// Concurrency/channel
+func TestChannel(t *testing.T) {
+	countTopic()
+
+	c := make(chan int)
+	for i := 0; i < 5; i++ {
+		worker := &Worker{id: i}
+		go worker.process(c)
+	}
+
+	c <- 0
+	time.Sleep(time.Millisecond * 10)
+}
+
+type Worker struct {
+	id int
+}
+
+func (w *Worker) process(c chan int) {
+	for {
+		data := <-c
+		fmt.Printf("Worker %d got %d\n", w.id, data)
+		if data < 10 {
+			c <- (data + 1)
+		}
+	}
 }
