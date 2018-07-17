@@ -93,8 +93,36 @@ func TestArray(t *testing.T) {
 
 	// slice example
 	// c & d share the same backing array, but are different slices
-	c := make([]int, 0, 10)
+	// c := make([]int, 0, 10)
+	// initial capacity not required
+	var c []int
 	d := append(c, 5)
 	fmt.Println(d)
 	fmt.Println(c)
+
+	// array grow test
+	s := make([]int, 0, 5)
+	fmt.Println(cap(s))
+	for i := 0; i < 25; i++ {
+		s = append(s, i)
+	}
+	fmt.Println(cap(s))
+
+	// if slice length not specified, slice has init value in it
+	s = make([]int, 5)
+	// s = make([]int, 0, 5)
+	s = append(s, 5)
+	fmt.Println(s)
+}
+
+// Map
+func TestMap(t *testing.T) {
+	countTopic()
+
+	m := make(map[string]int)
+	m["conan"] = 100
+	power, exists := m["conan"]
+	fmt.Println(power, exists)
+	p, e := m["kakasi"]
+	fmt.Println(p, e)
 }
