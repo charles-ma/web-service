@@ -16,6 +16,16 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 6. There are other go package mgmt tool available, such as [goop](https://github.com/petejkim/goop)
 7. "go fmt" can format your code
 
+### Types
+1. int8/16/32/64, uint8/16/32/64, byte = uint8, rune = int32
+2. machine(computer architecture) dependent: int, uint, uintptr
+3. float32/64
+4. complex64/128
+5. NaN
+6. Inf/-Inf
+7. strings supports "" and `` (different from js template literals, cannot take ${})
+
+
 ### Syntax
 1. Go is C like. Java/C/C++/Js are also C like
 2. Go gets rid of () around conditions. Also gets rid of ; as line breaker

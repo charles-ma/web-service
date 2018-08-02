@@ -204,3 +204,15 @@ func (w *Worker) process(c chan int) {
 		}
 	}
 }
+
+func TestTypes(t *testing.T) {
+	countTopic()
+	var f float64
+	f = 32
+	fmt.Println(f)
+
+	var s string
+	// `` is not taking escaped chars
+	s = `good e\nxample`
+	fmt.Println(s)
+}
