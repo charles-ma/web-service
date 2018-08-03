@@ -215,4 +215,8 @@ func TestTypes(t *testing.T) {
 	// `` is not taking escaped chars
 	s = `good e\nxample`
 	fmt.Println(s)
+
+	if s == `good e\nxample` {
+		fmt.Println("Print again")
+	}
 }
