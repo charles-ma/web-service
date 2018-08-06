@@ -46,6 +46,7 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 1. won't compile if imported package not used
 2. Packages are imported using relative path to $GOPATH
 3. Source file structure: package declaration -> imports -> logic, same as Python
+4. Name starting with caps will be exported from a module
 
 ### Struct
 1. No class, only struct

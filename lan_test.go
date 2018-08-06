@@ -3,6 +3,7 @@ package main
 // not very often to see () in import statement though
 import (
 	"fmt"
+	"os"
 	"strconv"
 	"sync"
 	"testing"
@@ -240,12 +241,18 @@ func TestFunctional(t *testing.T) {
 	addOne = adderFactory(1)
 	addTen := adderFactory(10)
 
-	fmt.Println(addOne(2))
-	fmt.Println(addTen(2))
+	n, _ := fmt.Println(addOne(2))
+	fmt.Println(n)
+	n, _ = fmt.Println(addTen(999), "good")
+	fmt.Println(n)
 }
 
 func TestScope(t *testing.T) {
+	countTopic()
+
 	type adder struct {
 		// yet another adder
 	}
+
+	fmt.Println(os.Args)
 }
