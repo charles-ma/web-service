@@ -6,6 +6,7 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 ## Golang Notes
 ### Go characteristics
 1. Go is a compiled language(rather than scripting language, e.g Python), compiled to machine code. Code may need to be compiled separately for different computer architecture. Scripting languages are often cross platform
+2. Built-in functions are organized in modules. e.g fmt, time
 
 ### Commands
 1. "go run" will compile and run your code in a temporary work space, you can use "go run --work" to see the dir

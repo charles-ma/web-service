@@ -1,5 +1,6 @@
 package main
 
+// not very often to see () in import statement though
 import (
 	"fmt"
 	"strconv"
@@ -217,6 +218,34 @@ func TestTypes(t *testing.T) {
 	fmt.Println(s)
 
 	if s == `good e\nxample` {
-		fmt.Println("Print again")
+		// without using libraries
+		println("print again")
+		// using libraries
+		fmt.Println("print formatted again")
+	}
+}
+
+func TestFunctional(t *testing.T) {
+	countTopic()
+
+	type adder func(a int) int
+	var addOne adder
+
+	adderFactory := func(a int) adder {
+		var myInnerFunc adder = func(b int) int {
+			return a + b
+		}
+		return myInnerFunc
+	}
+	addOne = adderFactory(1)
+	addTen := adderFactory(10)
+
+	fmt.Println(addOne(2))
+	fmt.Println(addTen(2))
+}
+
+func TestScope(t *testing.T) {
+	type adder struct {
+		// yet another adder
 	}
 }
