@@ -256,3 +256,12 @@ func TestScope(t *testing.T) {
 
 	fmt.Println(os.Args)
 }
+
+func TestPointers(t *testing.T) {
+	countTopic()
+	i := 1
+	const Pi = 3.14
+	p := &i
+	*p = 2000
+	fmt.Println(i)
+}

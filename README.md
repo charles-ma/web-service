@@ -41,6 +41,14 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 4. declare var: var v type / assign var v = value / declare and assign v := value
 5. var will be initiated to zero value if not assigned any. zero value meaning 0, false, ""
 6. v := value can only be used within functions
+7. [Here](https://stackoverflow.com/questions/27919359/why-there-are-two-ways-of-declaring-variables-in-go-whats-the-difference-and-w) is a good answer about short/long declaratons 
+8. const var doesn't have to be referenced after declaration, var needs to be accessed
+9. const has to be assigned with a const value
+
+### Pointers
+1. Pointers are used in Go. Here is a good article about [pointers](https://www.callicoder.com/golang-pointers/)
+2. References are aliases of a variable(can be viewed as an address directly). Pointers are variables that store addresses
+3. Empty value for a pointer is nil
 
 ### Package
 1. won't compile if imported package not used
@@ -51,8 +59,9 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 ### Struct
 1. No class, only struct
 2. No constructors, only customized factory methods
-3. new(X) is equal to &X{}, will only allocate memory for the new variable
+3. new(X) is a syntax sugar to &X{}, will only allocate memory for the new variable
 4. class method are implemented using method receivers
+5. can use either a struct var or struct pointer to access fields, (*p).a is same as p.a for pointers
 
 ### Array & slice
 1. Array length is fixed!!!
