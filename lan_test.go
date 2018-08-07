@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"reflect"
 	"strconv"
 	"sync"
 	"testing"
@@ -83,7 +84,8 @@ func TestComplicatedStruct(t *testing.T) {
 func TestArray(t *testing.T) {
 	countTopic()
 
-	a := [5]int{0, 1, 2, 3, 4}
+	// a := [5]int{0, 1, 2, 3, 4}
+	a := [...]int{0, 1, 2, 3, 4}
 	for index, value := range a {
 		fmt.Print(a[index])
 		fmt.Print(value)
@@ -264,4 +266,15 @@ func TestPointers(t *testing.T) {
 	p := &i
 	*p = 2000
 	fmt.Println(i)
+}
+
+func TestString(t *testing.T) {
+	countTopic()
+	const s = "Hello, 世界"
+	for i, c := range s {
+		fmt.Println(i, c, string(c), reflect.TypeOf(c))
+	}
+	var r rune
+	r = 97
+	fmt.Println(string(r), reflect.TypeOf(r))
 }

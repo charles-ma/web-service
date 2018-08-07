@@ -66,6 +66,12 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 ### Array & slice
 1. Array length is fixed!!!
 2. Use slice more
+3. [4]int and [5]int are distinct, uncompatible types
+4. [2]int{1, 2} is same as [...]int{1, 2}. if assigned to var a, type of a will be [2]int
+5. 
+
+### Loops and control
+1. range will give you rune/code point if suffixed with a string
 
 ### Test
 1. run "go test"
