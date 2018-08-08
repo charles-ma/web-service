@@ -97,6 +97,11 @@ Goal: get familiar with Golang syntax and able to solve some simple problems usi
 1. go routine is invoked using go myFunction()
 2. go routine will start go thread, having m:n mapping with os threads
 
+### Web
+1. golang has built in web support
+2. golang has a templating system, similar to jspx, binding btw template and struct is dynamic
+3. 
+
 ## Books
 [The little Go book](https://www.openmymind.net/assets/go/go.pdf) *Free*
 
