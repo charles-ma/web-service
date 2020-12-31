@@ -1,5 +1,9 @@
 build:
 	go build ./...
+	docker build \
+         --build-arg USER_ID=$(id -u) \
+         --build-arg GROUP_ID=$(id -g) \
+         -t web-service .
 
 test:
 	go test ./...
@@ -17,6 +21,11 @@ deploy:
 	sudo systemctl daemon-reload
 	sudo systemctl start web-service
 	sudo systemctl enable web-service
+
+.PHONY: deploy-docker
+deploy-docker:
+	$(MAKE) build
+	docker run -it -d --rm -p 8010:8080 -v /root/go/src/web-service:/go/src/web-service web-service
 
 
 

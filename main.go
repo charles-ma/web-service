@@ -8,7 +8,7 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Look what number you got!\n%d", rand.Intn(100)+1)
+	fmt.Fprintf(w, "Look what number you got from Docker!\n%d", rand.Intn(100)+1)
 }
 
 func main() {
