@@ -16,7 +16,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "\nperfect!\n")
 	}
 
-	fmt.Fprintf(w, "Your is address is ", r.RemoteAddr, "\n")
+	fmt.Fprintf(w, "Your is address is %s\n", r.RemoteAddr)
 }
 
 func main() {
