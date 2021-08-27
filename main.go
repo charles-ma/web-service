@@ -13,10 +13,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Look what number you got from Docker!\n%d\n", n)
 
 	if n >= 90 {
-		fmt.Fprintf(w, "\nperfect!")
+		fmt.Fprintf(w, "\nperfect!\n")
 	}
 
-	fmt.Fprintf(w, "Your is address is ", r.RemoteAddr)
+	fmt.Fprintf(w, "Your is address is ", r.RemoteAddr, "\n")
 }
 
 func main() {
