@@ -15,6 +15,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if n >= 90 {
 		fmt.Fprintf(w, "\nperfect!")
 	}
+
+	fmt.Fprintf(w, "Your is address is ", r.RemoteAddr)
 }
 
 func main() {
