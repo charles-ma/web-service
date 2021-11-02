@@ -60,7 +60,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	rateLimitingEnd := time.Now()
 
-	if c > 5 {
+	if c >= 5 {
 		fmt.Fprintln(w, "You are rate limited")
 	} else {
 		n := mymath.GenerateRandomNumber(100)
