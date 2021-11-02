@@ -27,6 +27,7 @@ deploy-container:
 	$(MAKE) build
 	# docker container stop web-service
 	docker run -it -d --rm -p 8010:8080  --name 'web-service' -v /root/go/src/web-service:/go/src/web-service web-service
+	# docker run -it -d --rm -p 8010:8080  --name 'web-service' -v /root/go/src/web-service:/go/src/web-service --network myredis web-service
 
 .PHONY: deploy
 deploy:
